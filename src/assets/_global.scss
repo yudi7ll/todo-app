@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: $primary-font;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.display {
+  &--flex { display: flex; }
+  &--block { display: block; }
+  &--inline-block { display: inline-block; }
+  &--inline { display: inline; }
+}
+
+.container {
+  margin: auto;
+  max-width: 535px;
+  padding: 3em 1em;
+}

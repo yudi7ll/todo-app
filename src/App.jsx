@@ -14,8 +14,22 @@ function App() {
         <GlobalStyles />
 
         <div className="bg">
-          <TodoCard />
-          <button type="button" onClick={toggleTheme}>Toggle Theme</button>
+          <div className="container">
+            <div className="header">
+              <h1>T O D O</h1>
+              <button
+                className="header__toggle-btn"
+                type="button"
+                onClick={toggleTheme}
+              >
+                TOGGLE THEME
+              </button>
+            </div>
+            <TodoCard />
+          </div>
+          <center>
+            <small>Drag and drop to reorder list</small>
+          </center>
         </div>
       </>
     </ThemeProvider>
