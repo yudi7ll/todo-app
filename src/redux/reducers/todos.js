@@ -1,4 +1,6 @@
-import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from '../actionTypes';
+import {
+  ADD_TODO, TOGGLE_TODO, SET_FILTER, CLEAR_COMPLETED_TODO,
+} from '../actionTypes';
 import { ALL_TODO } from '../filterTypes';
 
 const initialState = {
@@ -35,6 +37,18 @@ export default (state = initialState, action) => {
             isCompleted: !state.items[id].isCompleted,
           },
         },
+      };
+    }
+
+    case CLEAR_COMPLETED_TODO: {
+      const clearedTodo = state.allIds
+        .map((id) => state.items[id])
+        .filter((item) => !item.isCompleted);
+
+      return {
+        ...state,
+        items: { ...clearedTodo },
+        allIds: Object.keys(clearedTodo),
       };
     }
 

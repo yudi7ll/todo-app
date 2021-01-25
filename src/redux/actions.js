@@ -1,4 +1,6 @@
-import { ADD_TODO, SET_FILTER, TOGGLE_TODO } from './actionTypes';
+import {
+  ADD_TODO, CLEAR_COMPLETED_TODO, SET_FILTER, TOGGLE_TODO,
+} from './actionTypes';
 
 let currentId = 0;
 
@@ -15,6 +17,10 @@ export const addTodo = (content) => ({
 export const toggleTodo = (id) => ({
   type: TOGGLE_TODO,
   payload: { id },
+});
+
+export const clearCompletedTodo = () => ({
+  type: CLEAR_COMPLETED_TODO,
 });
 
 export const setFilter = (filter) => ({

@@ -2,7 +2,9 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import getTodos from '../../redux/selector';
-import { addTodo, toggleTodo, setFilter } from '../../redux/actions';
+import {
+  addTodo, toggleTodo, setFilter, clearCompletedTodo,
+} from '../../redux/actions';
 import { ACTIVE_TODO, ALL_TODO, COMPLETED_TODO } from '../../redux/filterTypes';
 
 import { CloseIcon } from '../Icons';
@@ -11,7 +13,7 @@ import IconCheck from '../../assets/images/icon-check.svg';
 import './styles.scss';
 
 function TodoCard({
-  filter, todos, dispatchAddTodo, dispatchToggleTodo, dispatchSetFilter,
+  filter, todos, dispatchAddTodo, dispatchToggleTodo, dispatchClearCompletedTodo, dispatchSetFilter,
 }) {
   const newTodo = useRef(null);
   const addNewTodo = (e) => {
@@ -108,6 +110,7 @@ function TodoCard({
           </div>
           <button
             className="list__action"
+            onClick={dispatchClearCompletedTodo}
             type="button"
           >
             Clear Completed
@@ -126,6 +129,7 @@ const mapStateToProps = ({ todos }) => ({
 TodoCard.propTypes = {
   dispatchAddTodo: PropTypes.func.isRequired,
   dispatchToggleTodo: PropTypes.func.isRequired,
+  dispatchClearCompletedTodo: PropTypes.func.isRequired,
   dispatchSetFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   todos: PropTypes.instanceOf(Array).isRequired,
@@ -136,6 +140,7 @@ export default connect(
   {
     dispatchAddTodo: addTodo,
     dispatchToggleTodo: toggleTodo,
+    dispatchClearCompletedTodo: clearCompletedTodo,
     dispatchSetFilter: setFilter,
   },
 )(TodoCard);
