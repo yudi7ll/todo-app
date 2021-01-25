@@ -1,5 +1,5 @@
 import {
-  ADD_TODO, TOGGLE_TODO, SET_FILTER, CLEAR_COMPLETED_TODO,
+  ADD_TODO, TOGGLE_TODO, DELETE_TODO, SET_FILTER, CLEAR_COMPLETED_TODO,
 } from '../actionTypes';
 import { ALL_TODO } from '../filterTypes';
 
@@ -37,6 +37,14 @@ export default (state = initialState, action) => {
             isCompleted: !state.items[id].isCompleted,
           },
         },
+      };
+    }
+
+    case DELETE_TODO: {
+      const { id } = action.payload;
+      return {
+        ...state,
+        allIds: [...state.allIds.filter((item) => item !== id)],
       };
     }
 

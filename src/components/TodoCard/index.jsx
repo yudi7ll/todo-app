@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import getTodos from '../../redux/selector';
 import {
-  addTodo, toggleTodo, setFilter, clearCompletedTodo,
+  addTodo, toggleTodo, deleteTodo, setFilter, clearCompletedTodo,
 } from '../../redux/actions';
 import { ACTIVE_TODO, ALL_TODO, COMPLETED_TODO } from '../../redux/filterTypes';
 
@@ -13,7 +13,13 @@ import IconCheck from '../../assets/images/icon-check.svg';
 import './styles.scss';
 
 function TodoCard({
-  filter, todos, dispatchAddTodo, dispatchToggleTodo, dispatchClearCompletedTodo, dispatchSetFilter,
+  dispatchAddTodo,
+  dispatchToggleTodo,
+  dispatchDeleteTodo,
+  dispatchClearCompletedTodo,
+  dispatchSetFilter,
+  filter,
+  todos,
 }) {
   const newTodo = useRef(null);
   const addNewTodo = (e) => {
@@ -39,7 +45,7 @@ function TodoCard({
       <div className="list">
         {
           todos.map(({ content, isCompleted, id }) => (
-            <div className="list__item" key={content}>
+            <div className="list__item" key={id}>
               <div>
                 <button
                   className="list__item__check"
@@ -67,7 +73,11 @@ function TodoCard({
               </div>
 
               <div className="remove">
-                <button className="remove__btn" type="button">
+                <button
+                  className="remove__btn"
+                  onClick={() => dispatchDeleteTodo(id)}
+                  type="button"
+                >
                   <CloseIcon className="remove__icon" />
                 </button>
               </div>
@@ -129,6 +139,7 @@ const mapStateToProps = ({ todos }) => ({
 TodoCard.propTypes = {
   dispatchAddTodo: PropTypes.func.isRequired,
   dispatchToggleTodo: PropTypes.func.isRequired,
+  dispatchDeleteTodo: PropTypes.func.isRequired,
   dispatchClearCompletedTodo: PropTypes.func.isRequired,
   dispatchSetFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
@@ -140,6 +151,7 @@ export default connect(
   {
     dispatchAddTodo: addTodo,
     dispatchToggleTodo: toggleTodo,
+    dispatchDeleteTodo: deleteTodo,
     dispatchClearCompletedTodo: clearCompletedTodo,
     dispatchSetFilter: setFilter,
   },
