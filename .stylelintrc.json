@@ -1,12 +1,14 @@
 {
   "extends": "stylelint-config-sass-guidelines",
   "plugins": [
-    "stylelint-order"
+    "stylelint-order",
+    "stylelint-scss"
   ],
   "rules": {
     "order/order": [
       "custom-properties",
       "declarations"
-    ]
+    ],
+    "max-nesting-depth": 4
   }
 }
