@@ -8,6 +8,10 @@ $border-radius: 5px;
   display: flex;
   padding-left: 1.2rem;
 
+  &__group {
+    width: 100%;
+  }
+
   &__input {
     border: 0;
     border-radius: $border-radius;
@@ -15,28 +19,6 @@ $border-radius: 5px;
     font-size: 18px;
     padding: 1rem 1.2rem;
     width: 100%;
-  }
-}
-
-.dot {
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  content: '';
-  cursor: pointer;
-  height: 1.2rem;
-  width: 1.2rem;
-
-  &__check {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &--active {
-    background-image: $check-bg;
-    border: 0;
-    position: relative;
   }
 }
 
@@ -67,13 +49,10 @@ $border-radius: 5px;
       display: flex;
     }
 
-    &:hover {
-      text-decoration: line-through;
-    }
-
     &__name {
       font-size: 1em;
       margin-left: 0.5rem;
+      text-align: left;
       text-decoration: none;
 
       &--completed {

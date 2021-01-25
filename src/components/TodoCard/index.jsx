@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
+
+// React Redux
 import { connect } from 'react-redux';
 import getTodos from '../../redux/selector';
 import {
@@ -7,9 +9,11 @@ import {
 } from '../../redux/actions';
 import { ACTIVE_TODO, ALL_TODO, COMPLETED_TODO } from '../../redux/filterTypes';
 
+// Components
+import Check from '../Check';
+
 import { CloseIcon } from '../Icons';
 
-import IconCheck from '../../assets/images/icon-check.svg';
 import './styles.scss';
 
 function TodoCard({
@@ -31,8 +35,8 @@ function TodoCard({
   return (
     <>
       <label htmlFor="input" className="form">
-        <span className="dot" />
-        <form onSubmit={addNewTodo}>
+        <Check />
+        <form className="form__group" onSubmit={addNewTodo}>
           <input
             id="input"
             className="form__input"
@@ -52,13 +56,7 @@ function TodoCard({
                   onClick={() => dispatchToggleTodo(id)}
                   type="button"
                 >
-                  <div className={[
-                    'dot',
-                    isCompleted ? 'dot--active' : '',
-                  ].join(' ')}
-                  >
-                    { isCompleted && <img className="dot__check" src={IconCheck} alt="Check Icon Todo App" /> }
-                  </div>
+                  <Check isCompleted={isCompleted} />
                 </button>
                 <button
                   className={[
