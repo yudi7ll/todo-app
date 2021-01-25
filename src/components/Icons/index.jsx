@@ -1,16 +1,52 @@
 import React from 'react';
 
+/* eslint-disable react/jsx-props-no-spreading */
 export function CloseIcon(props) {
   return (
-    <svg
-      height="1em"
-      viewBox="0 0 365.696 365.696"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path d="M243.188 182.86L356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0" />
+    <svg xmlns="http://www.w3.org/2000/svg" width={18} height={18} {...props}>
+      <path
+        fill="#494C6B"
+        fillRule="evenodd"
+        d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+      />
     </svg>
   );
 }
 
+export function CheckIcon(props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={11} height={9} {...props}>
+      <path
+        fill="none"
+        stroke="#FFF"
+        strokeWidth={2}
+        d="M1 4.304L3.696 7l6-6"
+      />
+    </svg>
+  );
+}
+
+export function MoonIcon(props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" {...props}>
+      <path
+        fill="#FFF"
+        fillRule="evenodd"
+        d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
+      />
+    </svg>
+  );
+}
+
+export function SunIcon(props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" {...props}>
+      <path
+        fill="#FFF"
+        fillRule="evenodd"
+        d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
+      />
+    </svg>
+  );
+}
+/* eslint-enable */

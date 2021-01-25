@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import TodoCard from './components/TodoCard';
 import { GlobalStyles, light, dark } from './theme';
+
+import { MoonIcon, SunIcon } from './components/Icons';
+
 import './assets/app.scss';
 
 function App() {
@@ -22,7 +25,7 @@ function App() {
                 type="button"
                 onClick={toggleTheme}
               >
-                TOGGLE THEME
+                { isDarkTheme ? <MoonIcon /> : <SunIcon /> }
               </button>
             </div>
             <TodoCard />

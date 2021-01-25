@@ -8,7 +8,7 @@ import './styles.scss';
 function Check({ isCompleted }) {
   return (
     <div className={['check', isCompleted && 'check--active'].join(' ')}>
-      { isCompleted && <img className="check__img" src={CheckIcon} alt="Check Icon Todo App" /> }
+      { isCompleted && <img className="check__img" src={CheckIcon} alt="" /> }
     </div>
   );
 }
