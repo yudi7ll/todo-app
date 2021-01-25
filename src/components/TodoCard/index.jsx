@@ -83,7 +83,11 @@ function TodoCard({
           ))
         }
         <div className="list__footer">
-          <span>5 item left</span>
+          <span>
+            {todos.length}
+            {' '}
+            item left
+          </span>
           <div>
             <button
               className={[
