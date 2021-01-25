@@ -84,7 +84,7 @@ function TodoCard({
         }
         <div className="list__footer">
           <span>
-            {todos.length}
+            { todos.length }
             {' '}
             item left
           </span>
