@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     color: ${({ theme }) => theme.text};
   }
+
   body {
     background-color: ${({ theme }) => theme.bodyBg};
     transition: .2s;
@@ -26,6 +27,10 @@ export const GlobalStyles = createGlobalStyle`
 
   .list__item {
     border-color: ${({ theme }) => theme.borderColor};
+  }
+
+  .list__item__name--completed {
+    color: ${({ theme }) => theme.textHover};
   }
 
   .list__footer * {

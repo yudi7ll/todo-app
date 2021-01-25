@@ -7,6 +7,7 @@ import { ACTIVE_TODO, ALL_TODO, COMPLETED_TODO } from '../../redux/filterTypes';
 
 import { CloseIcon } from '../Icons';
 
+import IconCheck from '../../assets/images/icon-check.svg';
 import './styles.scss';
 
 function TodoCard({
@@ -39,19 +40,22 @@ function TodoCard({
             <div className="list__item" key={content}>
               <div>
                 <button
-                  className={[
-                    'list__item__check',
-                    isCompleted && 'list__item__check--completed',
-                  ].join(' ')}
+                  className="list__item__check"
                   onClick={() => dispatchToggleTodo(id)}
                   type="button"
                 >
-                  <div className="dot" />
+                  <div className={[
+                    'dot',
+                    isCompleted ? 'dot--active' : '',
+                  ].join(' ')}
+                  >
+                    { isCompleted && <img className="dot__check" src={IconCheck} alt="Check Icon Todo App" /> }
+                  </div>
                 </button>
                 <button
                   className={[
                     'list__item__name',
-                    isCompleted && 'list__item__name--completed',
+                    isCompleted ? 'list__item__name--completed' : '',
                   ].join(' ')}
                   onClick={() => dispatchToggleTodo(id)}
                   type="button"
