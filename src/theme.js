@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     transition: .2s;
   }
 
-  .bg {
+  .wrapper {
     background-image: url(${({ theme }) => theme.bgImage});
   }
 
@@ -27,22 +27,26 @@ export const GlobalStyles = createGlobalStyle`
   .list__item {
     border-color: ${({ theme }) => theme.borderColor};
   }
+
+  .remove__icon {
+    fill: ${({ theme }) => theme.text};
+  }
 `;
 
 export const light = {
+  bgImage: bgLight,
   bodyBg: 'hsl(236, 33%, 92%)',
   borderColor: 'hsl(233, 11%, 84%)',
   cardBg: 'hsl(0, 0%, 98%)',
   text: 'hsl(235, 19%, 35%)',
   textHover: 'hsl(236, 9%, 61%)',
-  bgImage: bgLight,
 };
 
 export const dark = {
+  bgImage: bgDark,
   bodyBg: 'hsl(235, 21%, 11%)',
   borderColor: 'hsl(237, 14%, 26%)',
   cardBg: 'hsl(235, 24%, 19%)',
   text: 'hsl(234, 39%, 85%)',
   textHover: 'hsl(236, 33%, 92%)',
-  bgImage: bgDark,
 };

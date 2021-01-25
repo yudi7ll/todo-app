@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.scss';
+import {
+  CloseIcon,
+} from '../Icons';
 
 function TodoCard() {
   return (
@@ -10,23 +13,32 @@ function TodoCard() {
       </label>
       <div className="list">
         {
-          [
-            'Todo 1',
-            'Todo 2',
-            'Todo 3',
-            'Todo 4',
-          ].map((item) => (
-            <div className="list__item">
-              <div className="display--flex">
-                <span className="dot dot--active" />
-                <span>{ item }</span>
+          /*
+          todos.map(({ todo, id }) => (
+            <div className="list__item" key={id}>
+              <div>
+                <button
+                  className="list__item__check"
+                  type="button"
+                >
+                  <div className="dot" />
+                </button>
               </div>
-
-              <button type="button">
-                <span className="deleteIcon" />
+              <button
+                className="list__item__name"
+                type="button"
+              >
+                { todo }
               </button>
+
+              <div className="remove">
+                <button className="remove__btn" type="button">
+                  <CloseIcon className="remove__icon" />
+                </button>
+              </div>
             </div>
           ))
+          */
         }
         <div className="list__footer">
           <span>5 item left</span>

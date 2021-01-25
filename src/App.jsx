@@ -13,7 +13,7 @@ function App() {
       <>
         <GlobalStyles />
 
-        <div className="bg">
+        <div className="wrapper">
           <div className="container">
             <div className="header">
               <h1>T O D O</h1>
