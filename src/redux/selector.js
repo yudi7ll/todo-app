@@ -12,7 +12,7 @@ function getCompletedTodos(todos) {
   return getAllTodos(todos).filter((items) => items.isCompleted);
 }
 
-export default ({ todos }) => {
+export default (todos) => {
   switch (todos.filter) {
     case ACTIVE_TODO:
       return getActiveTodos(todos);

@@ -28,8 +28,16 @@ export const GlobalStyles = createGlobalStyle`
     border-color: ${({ theme }) => theme.borderColor};
   }
 
+  .list__footer * {
+    color: ${({ theme }) => theme.textHover};
+  }
+
+  .list__action:hover  {
+    color: ${({ theme }) => theme.text};
+  }
+
   .remove__icon {
-    fill: ${({ theme }) => theme.text};
+    fill: ${({ theme }) => theme.textHover};
   }
 `;
 
@@ -48,5 +56,5 @@ export const dark = {
   borderColor: 'hsl(237, 14%, 26%)',
   cardBg: 'hsl(235, 24%, 19%)',
   text: 'hsl(234, 39%, 85%)',
-  textHover: 'hsl(236, 33%, 92%)',
+  textHover: 'hsl(233, 14%, 35%)',
 };
