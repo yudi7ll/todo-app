@@ -61,9 +61,13 @@ $border-radius: 5px;
     }
 
     &__name {
+      font-size: 1em;
       margin-left: 0.5rem;
       text-decoration: none;
 
+      &--completed {
+        text-decoration: line-through;
+      }
     }
   }
 

@@ -20,6 +20,5 @@
         "only-warn"
     ],
     "rules": {
-      "no-plusplus": "off"
     }
 }

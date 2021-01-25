@@ -1,6 +1,11 @@
-import { ADD_TODO, TOGGLE_TODO } from '../actionTypes';
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from '../actionTypes';
+import { ALL_TODO } from '../filterTypes';
 
-const initialState = {};
+const initialState = {
+  allIds: [],
+  items: {},
+  filter: ALL_TODO,
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -8,9 +13,13 @@ export default (state = initialState, action) => {
       const { id, content } = action.payload;
       return {
         ...state,
-        [id]: {
-          content,
-          isCompleted: false,
+        allIds: [...state.allIds, id],
+        items: {
+          ...state.items,
+          [id]: {
+            content,
+            isCompleted: false,
+          },
         },
       };
     }
@@ -19,10 +28,21 @@ export default (state = initialState, action) => {
       const { id } = action.payload;
       return {
         ...state,
-        [id]: {
-          ...state[id],
-          isCompleted: !state[id].isCompleted,
+        items: {
+          ...state.items,
+          [id]: {
+            ...state.items[id],
+            isCompleted: !state.items[id].isCompleted,
+          },
         },
+      };
+    }
+
+    case SET_FILTER: {
+      const { filter } = action.payload;
+      return {
+        ...state,
+        filter,
       };
     }
 
