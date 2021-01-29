@@ -5,15 +5,22 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import getTodos from '../../redux/selector';
 import {
-  addTodo, toggleTodo, deleteTodo, setFilter, clearCompletedTodo,
+  addTodo,
+  toggleTodo,
+  deleteTodo,
+  setFilter,
+  clearCompletedTodo,
 } from '../../redux/actions';
-import { ACTIVE_TODO, ALL_TODO, COMPLETED_TODO } from '../../redux/filterTypes';
+import {
+  ACTIVE_TODO,
+  ALL_TODO,
+  COMPLETED_TODO,
+} from '../../redux/filterTypes';
 
 // Components
 import Check from '../Check';
 
 import { CloseIcon } from '../Icons';
-
 import './styles.scss';
 
 function TodoCard({
@@ -31,6 +38,41 @@ function TodoCard({
     dispatchAddTodo(newTodo.current.value);
     newTodo.current.value = '';
   };
+
+  const ListFilter = () => (
+    <>
+      <button
+        className={[
+          'list__action',
+          filter === ALL_TODO ? 'list__action--active' : '',
+        ].join(' ')}
+        onClick={() => dispatchSetFilter(ALL_TODO)}
+        type="button"
+      >
+        All
+      </button>
+      <button
+        className={[
+          'list__action',
+          filter === ACTIVE_TODO ? 'list__action--active' : '',
+        ].join(' ')}
+        onClick={() => dispatchSetFilter(ACTIVE_TODO)}
+        type="button"
+      >
+        Active
+      </button>
+      <button
+        className={[
+          'list__action',
+          filter === COMPLETED_TODO ? 'list__action--active' : '',
+        ].join(' ')}
+        onClick={() => dispatchSetFilter(COMPLETED_TODO)}
+        type="button"
+      >
+        Completed
+      </button>
+    </>
+  );
 
   return (
     <>
@@ -88,37 +130,8 @@ function TodoCard({
             {' '}
             item left
           </span>
-          <div>
-            <button
-              className={[
-                'list__action list__filter',
-                filter === ALL_TODO ? 'list__filter--active' : '',
-              ].join(' ')}
-              onClick={() => dispatchSetFilter(ALL_TODO)}
-              type="button"
-            >
-              All
-            </button>
-            <button
-              className={[
-                'list__action list__filter',
-                filter === ACTIVE_TODO ? 'list__filter--active' : '',
-              ].join(' ')}
-              onClick={() => dispatchSetFilter(ACTIVE_TODO)}
-              type="button"
-            >
-              Active
-            </button>
-            <button
-              className={[
-                'list__action list__filter',
-                filter === COMPLETED_TODO ? 'list__filter--active' : '',
-              ].join(' ')}
-              onClick={() => dispatchSetFilter(COMPLETED_TODO)}
-              type="button"
-            >
-              Completed
-            </button>
+          <div className="list__filter">
+            <ListFilter />
           </div>
           <button
             className="list__action"
@@ -127,6 +140,11 @@ function TodoCard({
           >
             Clear Completed
           </button>
+        </div>
+      </div>
+      <div className="list">
+        <div className="list__mobile-filter">
+          <ListFilter />
         </div>
       </div>
     </>

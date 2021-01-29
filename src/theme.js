@@ -33,7 +33,8 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.textHover};
   }
 
-  .list__footer * {
+  .list__footer *,
+  .list__mobile-filter * {
     color: ${({ theme }) => theme.textHover};
   }
 
