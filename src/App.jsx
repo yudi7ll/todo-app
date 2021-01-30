@@ -30,7 +30,7 @@ function App() {
             </div>
             <TodoCard />
           </div>
-          <center>
+          <center className="hint">
             <small>Drag and drop to reorder list</small>
           </center>
         </div>
