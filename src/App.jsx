@@ -25,7 +25,7 @@ function App() {
                 type="button"
                 onClick={toggleTheme}
               >
-                { isDarkTheme ? <MoonIcon /> : <SunIcon /> }
+                { isDarkTheme ? <SunIcon /> : <MoonIcon /> }
               </button>
             </div>
             <TodoCard />
