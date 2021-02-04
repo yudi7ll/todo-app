@@ -8,9 +8,11 @@ import { addTodo } from './redux/actions';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-store.dispatch(addTodo('Javascript'));
-store.dispatch(addTodo('Reactjs'));
-store.dispatch(addTodo('Awesome'));
+store.dispatch(addTodo('Jog around the park 3x'));
+store.dispatch(addTodo('10 minutes meditation'));
+store.dispatch(addTodo('Read for 1 hour'));
+store.dispatch(addTodo('Pick up groceries'));
+store.dispatch(addTodo('Complete Todo App on Frontend Mentor'));
 
 ReactDOM.render(
   <React.StrictMode>
