@@ -1,5 +1,6 @@
+import arrayMove from 'array-move';
 import {
-  ADD_TODO, CLEAR_COMPLETED_TODO, DELETE_TODO, SET_FILTER, TOGGLE_TODO,
+  ADD_TODO, CLEAR_COMPLETED_TODO, DELETE_TODO, SET_FILTER, SORT_TODO, TOGGLE_TODO,
 } from './actionTypes';
 
 let currentId = 0;
@@ -32,5 +33,12 @@ export const setFilter = (filter) => ({
   type: SET_FILTER,
   payload: {
     filter,
+  },
+});
+
+export const sortTodo = ({ allIds, oldIndex, newIndex }) => ({
+  type: SORT_TODO,
+  payload: {
+    allIds: arrayMove(allIds, oldIndex, newIndex),
   },
 });

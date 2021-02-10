@@ -40,9 +40,14 @@ $border-radius: 5px;
   margin-top: 1rem;
   padding: 0;
 
+  &__container {
+    padding: 0;
+  }
+
   &__item {
     align-items: center;
     border-bottom: 1px solid #ccc;
+    cursor: grab;
     display: flex;
     justify-content: space-between;
     padding: 1rem;

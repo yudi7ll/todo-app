@@ -26,6 +26,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .list__item {
+    background-color: ${({ theme }) => theme.cardBg};
     border-color: ${({ theme }) => theme.borderColor};
   }
 

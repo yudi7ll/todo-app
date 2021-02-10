@@ -1,5 +1,5 @@
 import {
-  ADD_TODO, TOGGLE_TODO, DELETE_TODO, SET_FILTER, CLEAR_COMPLETED_TODO,
+  ADD_TODO, TOGGLE_TODO, DELETE_TODO, SET_FILTER, CLEAR_COMPLETED_TODO, SORT_TODO,
 } from '../actionTypes';
 import { ALL_TODO } from '../filterTypes';
 
@@ -11,6 +11,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case SORT_TODO: {
+      const { allIds } = action.payload;
+      return { ...state, allIds };
+    }
     case ADD_TODO: {
       const { id, content } = action.payload;
       return {

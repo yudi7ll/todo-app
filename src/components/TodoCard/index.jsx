@@ -6,27 +6,25 @@ import { connect } from 'react-redux';
 import getTodos from '../../redux/selector';
 import {
   addTodo,
-  toggleTodo,
-  deleteTodo,
   setFilter,
   clearCompletedTodo,
 } from '../../redux/actions';
+
+// components
+import Check from '../Check';
+
+// filter types
 import {
   ACTIVE_TODO,
   ALL_TODO,
   COMPLETED_TODO,
 } from '../../redux/filterTypes';
 
-// Components
-import Check from '../Check';
-
-import { CloseIcon } from '../Icons';
 import './styles.scss';
+import SortableLists from './SortableLists';
 
 function TodoCard({
   dispatchAddTodo,
-  dispatchToggleTodo,
-  dispatchDeleteTodo,
   dispatchClearCompletedTodo,
   dispatchSetFilter,
   filter,
@@ -88,48 +86,10 @@ function TodoCard({
           />
         </form>
       </label>
-      <div className="list">
-        {
-          todos.map(({ content, isCompleted, id }) => (
-            <div className="list__item" key={id}>
-              <div>
-                <button
-                  className="list__item__check"
-                  onClick={() => dispatchToggleTodo(id)}
-                  type="button"
-                >
-                  <Check isCompleted={isCompleted} />
-                </button>
-                <button
-                  className={[
-                    'list__item__name',
-                    isCompleted ? 'list__item__name--completed' : '',
-                  ].join(' ')}
-                  onClick={() => dispatchToggleTodo(id)}
-                  type="button"
-                >
-                  { content }
-                </button>
-              </div>
-
-              <div className="remove">
-                <button
-                  className="remove__btn"
-                  onClick={() => dispatchDeleteTodo(id)}
-                  type="button"
-                >
-                  <CloseIcon className="remove__icon" />
-                </button>
-              </div>
-            </div>
-          ))
-        }
+      <div className="list noselect">
+        <SortableLists />
         <div className="list__footer">
-          <span>
-            { todos.length }
-            {' '}
-            item left
-          </span>
+          <span>{ todos.length } item left</span>
           <div className="list__filter">
             <ListFilter />
           </div>
@@ -152,14 +112,12 @@ function TodoCard({
 }
 
 const mapStateToProps = ({ todos }) => ({
-  todos: getTodos(todos),
   filter: todos.filter,
+  todos: getTodos(todos),
 });
 
 TodoCard.propTypes = {
   dispatchAddTodo: PropTypes.func.isRequired,
-  dispatchToggleTodo: PropTypes.func.isRequired,
-  dispatchDeleteTodo: PropTypes.func.isRequired,
   dispatchClearCompletedTodo: PropTypes.func.isRequired,
   dispatchSetFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
@@ -170,8 +128,6 @@ export default connect(
   mapStateToProps,
   {
     dispatchAddTodo: addTodo,
-    dispatchToggleTodo: toggleTodo,
-    dispatchDeleteTodo: deleteTodo,
     dispatchClearCompletedTodo: clearCompletedTodo,
     dispatchSetFilter: setFilter,
   },

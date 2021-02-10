@@ -33,3 +33,7 @@ button {
   max-width: 535px;
   padding: 3rem 1rem;
 }
+
+.noselect {
+  user-select: none;
+}
