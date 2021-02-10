@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/todo-app-main/static/css/main.5d1fa8df.chunk.css",
-    "main.js": "/todo-app-main/static/js/main.1f9fa54e.chunk.js",
-    "main.js.map": "/todo-app-main/static/js/main.1f9fa54e.chunk.js.map",
-    "runtime-main.js": "/todo-app-main/static/js/runtime-main.9a1e7486.js",
-    "runtime-main.js.map": "/todo-app-main/static/js/runtime-main.9a1e7486.js.map",
-    "static/js/2.2c934476.chunk.js": "/todo-app-main/static/js/2.2c934476.chunk.js",
-    "static/js/2.2c934476.chunk.js.map": "/todo-app-main/static/js/2.2c934476.chunk.js.map",
-    "static/js/3.73b476b9.chunk.js": "/todo-app-main/static/js/3.73b476b9.chunk.js",
-    "static/js/3.73b476b9.chunk.js.map": "/todo-app-main/static/js/3.73b476b9.chunk.js.map",
+    "main.css": "/todo-app-main/static/css/main.c7922af6.chunk.css",
+    "main.js": "/todo-app-main/static/js/main.9cd93563.chunk.js",
+    "main.js.map": "/todo-app-main/static/js/main.9cd93563.chunk.js.map",
+    "runtime-main.js": "/todo-app-main/static/js/runtime-main.d8ad5e88.js",
+    "runtime-main.js.map": "/todo-app-main/static/js/runtime-main.d8ad5e88.js.map",
+    "static/js/2.2c22def1.chunk.js": "/todo-app-main/static/js/2.2c22def1.chunk.js",
+    "static/js/2.2c22def1.chunk.js.map": "/todo-app-main/static/js/2.2c22def1.chunk.js.map",
+    "static/js/3.a6ac212e.chunk.js": "/todo-app-main/static/js/3.a6ac212e.chunk.js",
+    "static/js/3.a6ac212e.chunk.js.map": "/todo-app-main/static/js/3.a6ac212e.chunk.js.map",
     "index.html": "/todo-app-main/index.html",
-    "static/css/main.5d1fa8df.chunk.css.map": "/todo-app-main/static/css/main.5d1fa8df.chunk.css.map",
-    "static/js/2.2c934476.chunk.js.LICENSE.txt": "/todo-app-main/static/js/2.2c934476.chunk.js.LICENSE.txt",
+    "static/css/main.c7922af6.chunk.css.map": "/todo-app-main/static/css/main.c7922af6.chunk.css.map",
+    "static/js/2.2c22def1.chunk.js.LICENSE.txt": "/todo-app-main/static/js/2.2c22def1.chunk.js.LICENSE.txt",
     "static/media/bg-desktop-dark.73e47dbb.jpg": "/todo-app-main/static/media/bg-desktop-dark.73e47dbb.jpg",
     "static/media/bg-desktop-light.3508d620.jpg": "/todo-app-main/static/media/bg-desktop-light.3508d620.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9a1e7486.js",
-    "static/js/2.2c934476.chunk.js",
-    "static/css/main.5d1fa8df.chunk.css",
-    "static/js/main.1f9fa54e.chunk.js"
+    "static/js/runtime-main.d8ad5e88.js",
+    "static/js/2.2c22def1.chunk.js",
+    "static/css/main.c7922af6.chunk.css",
+    "static/js/main.9cd93563.chunk.js"
   ]
 }
