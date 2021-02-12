@@ -8,7 +8,7 @@ import { MoonIcon, SunIcon } from './components/Icons';
 import './assets/app.scss';
 
 function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
   const toggleTheme = () => setIsDarkTheme((prevState) => !prevState);
 
   return (
