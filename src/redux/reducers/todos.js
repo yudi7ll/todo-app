@@ -1,7 +1,7 @@
 import {
   ADD_TODO, TOGGLE_TODO, DELETE_TODO, SET_FILTER, CLEAR_COMPLETED_TODO, SORT_TODO,
 } from '../actionTypes';
-import { ALL_TODO } from '../filterTypes';
+import {ALL_TODO} from '../filterTypes';
 
 const initialState = {
   allIds: [],
@@ -12,11 +12,11 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SORT_TODO: {
-      const { allIds } = action.payload;
-      return { ...state, allIds };
+      const {allIds} = action.payload;
+      return {...state, allIds};
     }
     case ADD_TODO: {
-      const { id, content } = action.payload;
+      const {id, content} = action.payload;
       return {
         ...state,
         allIds: [...state.allIds, id],
@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
     }
 
     case TOGGLE_TODO: {
-      const { id } = action.payload;
+      const {id} = action.payload;
       return {
         ...state,
         items: {
@@ -45,7 +45,7 @@ export default (state = initialState, action) => {
     }
 
     case DELETE_TODO: {
-      const { id } = action.payload;
+      const {id} = action.payload;
       return {
         ...state,
         allIds: [...state.allIds.filter((item) => item !== id)],
@@ -59,13 +59,13 @@ export default (state = initialState, action) => {
 
       return {
         ...state,
-        items: { ...clearedTodo },
+        items: {...clearedTodo},
         allIds: Object.keys(clearedTodo),
       };
     }
 
     case SET_FILTER: {
-      const { filter } = action.payload;
+      const {filter} = action.payload;
       return {
         ...state,
         filter,
